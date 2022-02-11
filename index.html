@@ -13,71 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=The+Nautigal:wght@700&display=swap"
         rel="stylesheet" />
-
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Hello, world!</title>
-
-    <style>
-        body {
-            font-family: "Poppins", sans-serif !important;
-        }
-
-        .color-1 {
-            background-color: #001233;
-            color: whitesmoke !important;
-        }
-
-        .color-2 {
-            background-color: #001845;
-        }
-
-        .color-3 {
-            background-color: #0353a4
-        }
-
-        .color-4 {
-            background-color: #023e7d;
-            color: white
-        }
-
-        /* .shadow-color-4{
-    border-radius: 10px;
-background: #023e7d;
-box-shadow: inset 7px 7px 14px #012346,
-            inset -7px -7px 14px #0359b4;
-} */
-        .input-card {
-            /* border: 5px solid #002855;
-                border-radius: 10px; */
-
-            border-radius: 10px;
-            background: #002855;
-            box-shadow: inset 7px 7px 14px #001630,
-                inset -7px -7px 14px #003a7a;
-        }
-
-        .print-button,
-        .download-button {
-            color: #1D9AF2;
-            background-color: #292D3E;
-            border: 1px solid #1D9AF2;
-            border-radius: 4px;
-            padding: 0 15px;
-            cursor: pointer;
-            height: 32px;
-            font-size: 14px;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .print-button:hover {
-            box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
-            transform: translateX(-3px);
-        }
-
-        .download-button:hover {
-            box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
-            transform: translateX(-3px);
-        }
-    </style>
 </head>
 
 <body>
@@ -96,7 +34,7 @@ box-shadow: inset 7px 7px 14px #012346,
             <div class="input-group">
                 <span class="input-group-text">Buyer details</span>
                 <textarea class="form-control" aria-label="With textarea" id="buyer-details-input"></textarea>
-                <button class="btn btn-primary" id="detail-submit-btn">Submit</button>
+                <button class="btn btn-primary" onclick="addBuyerDetail()">Submit</button>
             </div>
             <!--  -->
 
@@ -106,19 +44,20 @@ box-shadow: inset 7px 7px 14px #012346,
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Item name</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" id="item-name-input" />
+                        aria-describedby="inputGroup-sizing-sm" id="name-item-input" />
                 </div>
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                     <input type="number" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" id="item-price-input" />
+                        aria-describedby="inputGroup-sizing-sm" id="price-item-input" />
                 </div>
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
                     <input type="number" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" id="item-quantity-input" />
+                        aria-describedby="inputGroup-sizing-sm" id="quantity-item-input" />
                 </div>
-                <button type="button" class="btn btn-primary" id="add-details-btn">Add </button>
+                <button type="button" class="btn btn-primary" onclick="addItem()">Add
+                </button>
 
             </div>
         </div>
@@ -160,14 +99,12 @@ box-shadow: inset 7px 7px 14px #012346,
                     <div class="col">
                         <div class="color-4 p-3 h-100 rounded">
                             <span class='text-warning'>
-                                Seller.
+                                Seller:
                             </span> <br>
                             <span>
-
-
                                 abcd inc
-                                hellow@apexo.com
-                                16 ctg, Bangladesh
+                                hello@apexo.com
+                                16 Dhaka, Bangladesh
                             </span>
                         </div>
                     </div>
@@ -232,9 +169,8 @@ box-shadow: inset 7px 7px 14px #012346,
                                 Bank Transfer
                             </span> <br>
                             <span>
-
-                                Account Name: Sagar Biswas
-                                Account Number:1234567890934
+                                Account Name: Ruman Islam.
+                                Account Number: 1234567890934
                                 Code: 231231231212312
                             </span>
 
@@ -260,11 +196,6 @@ box-shadow: inset 7px 7px 14px #012346,
                     </div>
                 </div>
             </div>
-            <!-- end of bottom part -->
-            <p>
-                Get started by creating a new file or uploading an existing file. We recommend every repository include
-                a README, LICENSE, and .gitignore.
-            </p>
         </div>
     </section>
     <section class='d-flex justify-content-center align-items-center mt-5 mb-4'>
@@ -274,14 +205,15 @@ box-shadow: inset 7px 7px 14px #012346,
     </section>
     <footer class='color-1 text-center'>
         <p class='p-4'>
-            All rights reserve @shda.com
+            All rights reserve @ruman.com
         </p>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
-
+    <!-- custom script file -->
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
